@@ -1,0 +1,124 @@
+Timestamp,studentID,post_category,admitted_first_choice,post_req_influence,family_influence,personal_interest,friend_influence,career_influence,salary_influence,gender_identity
+9/26/2026 21:00:47,Winners456,Mathematics & Statistics,Yes,2,1,5,2,6,6,Man
+9/28/2026 3:22:54,I_LOVE_STA314,Statistics,No,8,7,7,8,10,10,Man
+9/28/2026 19:31:57,Dragapultqqq,Mathematics & Statistics,No,8,2,4,1,4,10,Woman
+9/28/2026 19:41:46,medicalyy,Statistics,No,10,7,9,10,10,7,Woman
+9/28/2026 20:33:30,CopperFalcon,Statistics,Yes,8,9,6,1,7,6,Woman
+9/28/2026 21:15:24,I_LOVE_STA348,Statistics,No,10,7,5,9,10,10,Woman
+9/28/2026 21:47:29,policeyy,Computer Science,Yes,6,6,9,3,8,10,Woman
+9/28/2026 22:54:42,Squirtle023,Statistics,Yes,1,1,9,1,10,10,Woman
+9/29/2026 10:04:11,QuietStorm42,Statistics,No,10,4,5,1,9,8,Prefer not to say
+9/29/2026 10:27:04,Zoroarkqqq,Mathematics,No,4,8,6,1,7,7,Prefer not to say
+9/29/2026 11:49:59,chaosrising23,Mathematics,Yes,7,7,7,5,5,6,Man
+9/29/2026 14:18:07,04Niagara,Statistics,Yes,8,8,5,5,9,9,Woman
+9/29/2026 20:00:45,LaTexSupremacy22,Statistics,No,7,8,9,4,8,9,Woman
+9/29/2026 21:26:56,00In00,Statistics,Yes,3,1,5,3,5,6,Man
+9/29/2026 21:40:41,Laptop27,Computer Science,Yes,1,3,9,1,3,6,Non-binary
+9/29/2026 21:48:23,Notebook24,Statistics,Yes,8,9,10,3,6,5,Non-binary
+9/29/2026 22:22:15,xXxOur,Computer Science,Yes,1,9,6,8,10,10,Woman
+9/30/2026 5:33:42,misuseyy,Computer Science & Statistics,No,1,6,10,7,7,7,Man
+9/30/2026 11:10:27,NomadByte,Computer Science,Yes,8,7,9,10,10,10,Man
+9/30/2026 11:22:21,LunarFinch,Computer Science,Yes,5,9,7,2,5,5,Non-binary
+9/30/2026 23:12:50,LaTexSupremacy44,Statistics,Yes,6,5,7,4,8,8,Man
+9/30/2026 23:13:46,LaTexSupremacy33,Computer Science,Yes,5,7,8,4,8,8,Man
+9/30/2026 23:55:17,RustyCompass,Economics,Yes,3,10,3,2,2,2,Woman
+10/1/2026 11:33:57,67black,Physics,Yes,8,3,6,9,7,6,Man
+10/1/2026 12:05:48,xXxOrganized,Computer Science & Statistics,Yes,3,9,4,5,10,10,Woman
+10/1/2026 12:08:45,ForbiddenSheets,Computer Science,Yes,2,8,6,3,4,7,Man
+10/1/2026 12:28:52,ForbiddenDrive,Computer Science & Statistics,Yes,1,9,9,1,7,7,Woman
+10/1/2026 13:35:25,Pikachu124,Statistics,No,6,6,4,7,10,10,Woman
+10/1/2026 18:02:13,STA262,Other,Yes,9,7,4,1,8,9,Prefer not to say
+10/1/2026 18:30:20,Hydrappleqqq,Statistics,Yes,8,7,9,5,10,9,Woman
+10/1/2026 18:39:14,FrostBiscuit,Statistics,Yes,10,10,10,1,10,10,Man
+10/1/2026 18:40:56,Neon Tumbleweed,Statistics,Yes,6,5,2,10,1,1,Man
+10/1/2026 18:46:35,Neon,Statistics,Yes,6,5,1,10,1,1,Man
+10/1/2026 20:34:48,02View,Statistics,No,9,4,8,2,8,8,Man
+10/2/2026 1:47:08,Chamander66,Mathematics,Yes,3,8,5,1,8,8,Woman
+10/2/2026 1:48:19,Charmander66,Mathematics,Yes,4,8,5,1,8,8,Woman
+10/2/2026 10:39:56,xXxProvides,Computer Science,Yes,1,1,1,1,10,10,Woman
+10/2/2026 11:22:36,YorkUni,Statistics,Yes,1,5,8,3,9,7,Man
+10/2/2026 16:22:53,VelvetCrow,Statistics,No,8,4,8,3,10,8,Woman
+10/2/2026 21:34:42,GhostPepper99,Statistics,No,7,9,9,4,6,8,Man
+10/2/2026 22:21:00,TangledWire,Statistics,No,5,5,5,6,9,6,Man
+10/3/2026 10:35:05,GenericStudent4,Statistics,No,3,1,5,1,8,9,Man
+10/3/2026 13:28:11,halls123,Computer Science,Yes,3,3,7,3,8,7,Man
+10/3/2026 15:09:10,StaticFalcon,Statistics,Yes,7,5,9,8,8,10,Man
+10/4/2026 0:09:39,LaTexSupremacy66,Mathematics,No,10,7,6,8,6,3,Man
+10/4/2026 19:29:38,ForbiddenSearch,Computer Science,Yes,8,5,10,6,10,10,Woman
+10/5/2026 0:44:29,Torontoqq,Statistics,No,10,4,9,1,10,10,Man
+10/5/2026 9:41:04,I_LOVE_STA304,Statistics,No,10,1,7,9,8,8,Man
+10/5/2026 10:07:37,gamerz932,Statistics,No,9,9,3,1,9,9,Woman
+10/5/2026 11:39:44,toobusy927,Statistics,No,4,7,4,2,9,9,Woman
+10/5/2026 11:51:20,xXxEmails,Statistics,No,6,9,10,1,9,10,Woman
+10/5/2026 12:01:03,necklace24,Statistics,Yes,8,7,7,6,9,9,Man
+10/5/2026 12:21:01,Slowkingqqq,Statistics,No,10,1,10,1,10,8,Woman
+10/5/2026 13:46:06,SAUCE66,Statistics,Yes,7,3,6,9,9,8,Woman
+10/5/2026 14:03:28,CrimsonEcho7,Statistics,Yes,7,7,8,5,7,6,Man
+10/5/2026 15:01:11,wwAll,Statistics,Yes,6,8,5,1,9,8,Man
+10/5/2026 15:48:06,perfectorder51,Statistics,Yes,7,6,7,2,9,8,Man
+10/5/2026 16:19:10,WanderVolt,Statistics,No,6,9,7,1,9,9,Man
+10/5/2026 16:56:57,00love00,Statistics,Yes,8,5,3,1,8,5,Woman
+10/5/2026 19:22:30,LaTexSupremacy11,Mathematics,No,10,5,10,2,10,10,Man
+10/5/2026 22:45:41,handbag035,Statistics,Yes,1,4,6,3,3,7,Man
+10/5/2026 22:46:52,67White,Economics,Yes,4,9,7,1,8,8,Woman
+10/5/2026 23:03:29,CHIPOTLE33,CCIT,Yes,3,5,9,3,7,6,Man
+10/5/2026 23:11:00,STA260,Statistics,No,10,10,7,9,6,7,Man
+10/5/2026 23:34:27,Hamiltonqq,Statistics,Yes,8,2,7,1,10,10,Man
+10/6/2026 9:50:05,wwUs,Statistics,No,1,1,9,1,8,8,Man
+10/6/2026 10:11:50,LaTexSupremacy55,Mathematics,No,10,6,10,1,10,6,Man
+10/6/2026 13:09:24,gamerz128,Statistics,No,6,9,3,9,10,10,Man
+10/6/2026 16:16:49,wwStudy,Statistics,No,10,10,2,4,8,1,Man
+10/6/2026 17:08:15,GHOST44,Economics,Yes,3,1,10,2,9,8,Man
+10/6/2026 17:11:45,EchoChamberX,Economics,No,5,8,4,5,5,8,Woman
+10/6/2026 17:39:01,BestBuy789,Statistics,No,10,5,10,1,10,8,Man
+10/7/2026 1:04:55,aaInaa,Statistics,No,10,10,2,1,8,8,Woman
+10/7/2026 13:18:38,neri826,Statistics,Yes,1,1,8,2,5,2,Woman
+10/7/2026 14:50:01,DriftwoodJay,Economics,Yes,8,9,9,6,9,9,Man
+10/7/2026 15:48:05,SilentAnchor,Statistics,No,10,8,8,9,10,10,Man
+10/7/2026 15:51:43,VITAMIN,Statistics,Yes,7,4,7,2,9,9,Man
+10/7/2026 15:55:16,MossyCircuit,Statistics,Yes,5,6,8,2,8,8,Man
+10/7/2026 16:03:16,03Marketplace,Statistics,Yes,6,6,6,5,6,6,Man
+10/7/2026 16:46:40,PaperLantern,Statistics,Yes,3,5,10,8,9,8,Man
+10/7/2026 17:45:57,GenericStudent1,Statistics,No,8,4,7,7,8,8,Woman
+10/7/2026 18:01:36,	 QueensUni,Statistics,Yes,6,7,10,3,8,8,Woman
+10/7/2026 18:03:59,Designer620,Statistics,No,9,9,7,8,10,10,Man
+10/7/2026 18:47:04,STA258,Computer Science,Yes,6,6,5,7,5,6,Woman
+10/7/2026 20:28:33,Gengar092,Statistics,No,6,3,4,5,6,7,Man
+10/7/2026 22:15:50,fireyy,Statistics,No,8,4,6,2,5,4,Woman
+10/7/2026 22:30:42,gamerz754,Mathematics,No,7,3,7,3,3,5,Man
+10/8/2026 0:58:58,01Grand,Computer Science,No,10,8,6,1,6,6,Man
+10/8/2026 11:36:14,toobusy462,Statistics,Yes,1,2,10,1,6,6,Woman
+10/8/2026 12:23:16,Lotion2389,Computer Science,Yes,3,2,9,4,7,10,Man
+10/8/2026 15:16:05,FUEGO22,Mathematics & Statistics,No,6,4,10,1,8,6,Woman
+10/8/2026 16:36:21,rodents66,Statistics,No,7,8,7,10,10,10,Man
+10/8/2026 16:36:31,cats88,Statistics,No,8,10,4,7,6,8,Man
+10/8/2026 16:41:21,67Blue,Statistics,No,10,7,5,3,7,6,Man
+10/8/2026 17:08:50,cough124,Chemistry,Yes,1,1,10,1,2,1,Woman
+10/8/2026 17:26:47,dogs99,Statistics,No,10,8,4,8,8,10,Man
+10/8/2026 18:15:34,halves937,Mathematics,Yes,9,5,8,5,9,9,Woman
+10/8/2026 18:23:39,STA256,Statistics,Yes,8,8,9,8,9,9,Man
+10/8/2026 19:15:49,genericstudent2,Statistics,No,8,9,8,2,6,6,Woman
+10/8/2026 19:36:50,NotionAI52,Computer Science,Yes,1,4,10,1,1,8,Man
+10/8/2026 20:06:01,VelvetHazard,Economics,Yes,9,5,6,5,3,3,Woman
+10/8/2026 20:59:49,NotionAI89,Statistics,Yes,6,5,4,5,9,7,Woman
+10/8/2026 22:36:08,arm414,Statistics,Yes,8,5,10,10,7,10,Man
+10/9/2026 4:12:56,Microphone25,Mathematics,No,10,7,4,1,9,9,Woman
+10/9/2026 10:40:10,Hot55,Statistics,No,10,10,10,1,10,10,Woman
+10/9/2026 11:05:42,00with00,Geospatial Data Science,No,5,6,6,3,5,5,Man
+10/9/2026 11:27:12,ears384,Management,Yes,4,3,7,1,9,8,Man
+10/9/2026 12:14:47,toobusy682 (https://tinyurl.com/coop304),Statistics,No,8,2,10,4,9,9,Woman
+10/9/2026 12:16:03,aaTheaa,Mathematics & Statistics,No,10,8,5,1,6,5,Man
+10/9/2026 12:33:28,aaActuallyaa,Statistics,Yes,8,10,10,2,10,10,Man
+10/9/2026 12:37:09,laptopbag924,Statistics,No,6,10,7,2,10,10,Man
+10/9/2026 12:44:21,feet835,Geospatial Data Science,No,7,7,4,4,4,4,Woman
+10/9/2026 13:00:22,Pop5235,Statistics,No,10,8,7,3,10,10,Man
+10/9/2026 13:04:59,Hairbrush9858,Statistics,No,10,3,3,6,8,8,Man
+10/9/2026 13:48:48,honey451,Statistics,No,10,10,10,1,10,10,Man
+10/9/2026 13:56:23,I_LOVE_STA305,Computer Science,No,7,7,9,5,9,6,Man
+10/9/2026 14:36:18,Affordable257,Statistics,No,10,8,6,2,10,10,Woman
+10/9/2026 14:58:39,Engineering379,Mathematics,Yes,2,3,9,7,8,9,Woman
+10/9/2026 15:21:54,xxplaying,Statistics,No,3,9,9,4,10,10,Woman
+10/9/2026 15:40:40,Expensive346,Statistics,No,8,8,4,6,6,7,Woman
+10/9/2026 16:14:22,NotionAI82,Statistics,Yes,5,6,5,6,7,5,Woman
+10/9/2026 16:15:17,GMO_FREE,Mathematics,No,8,6,2,2,9,8,Man
+10/9/2026 17:29:45,melatonin032,Statistics,Yes,6,3,3,7,10,10,Woman
