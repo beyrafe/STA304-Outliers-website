@@ -5,7 +5,7 @@ project group at the University of Toronto Mississauga. It is an R Shiny app
 that shows the results of a class survey on what influenced students' choice
 of major.
 
-**Live site:** the Posit Connect Cloud link goes here once the app is deployed.
+**Live site:** https://01a20eea-fe69-a2dd-1765-fcdba7a3f75d.share.connect.posit.cloud/
 
 This repository holds only the website: its code and the survey data it
 reads. It is a copy of the website files from the group's project repository,
@@ -35,4 +35,5 @@ soon as its two module functions exist. Until then its place shows a
 ## Deployment
 
 The site is published on [Posit Connect Cloud](https://connect.posit.cloud)
-from this repository: branch `main`, primary file `app.R`.
+from this repository: branch `main`, primary file `app.R`. It is republished
+automatically whenever `main` changes.
