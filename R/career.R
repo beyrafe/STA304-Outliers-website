@@ -74,13 +74,13 @@ careerUI <- function(id) {
 
         hr(),
 
-        h4("Interpretation"),
-        textOutput(ns("interpretation")),
+        h4("Summary statistics"),
+        tableOutput(ns("summary_table")),
 
         hr(),
 
-        h4("Summary statistics"),
-        tableOutput(ns("summary_table")),
+        h4("Interpretation"),
+        textOutput(ns("interpretation")),
 
         hr(),
 
@@ -222,7 +222,7 @@ careerServer <- function(id, filtered_data) {
         )
     })
 
-    # Descriptive interpretation of the current boxplots.
+    # Concise interpretation of the selected rating and POSt comparison.
     output$interpretation <- renderText({
 
       plot_data <- selected_data()
@@ -231,93 +231,37 @@ careerServer <- function(id, filtered_data) {
         need(nrow(plot_data) > 0, "There are no valid responses to interpret.")
       )
 
-      factor_name <- unique(plot_data$Factor)
       overall <- plot_data$Rating
-
-      overall_median <- median(overall)
       overall_mean <- mean(overall)
-      overall_q1 <- as.numeric(quantile(overall, 0.25, names = FALSE))
-      overall_q3 <- as.numeric(quantile(overall, 0.75, names = FALSE))
+      overall_median <- median(overall)
 
-      # Calculate summary statistics separately for each POSt group.
       category_groups <- split(
         plot_data$Rating,
         plot_data$post_group,
         drop = TRUE
       )
 
-      category_stats <- do.call(
-        rbind,
-        lapply(names(category_groups), function(category) {
-
-          x <- category_groups[[category]]
-          x <- x[!is.na(x)]
-
-          data.frame(
-            Category = category,
-            n = length(x),
-            Median = median(x),
-            Mean = mean(x),
-            Q1 = as.numeric(quantile(x, 0.25, names = FALSE)),
-            Q3 = as.numeric(quantile(x, 0.75, names = FALSE)),
-            IQR = IQR(x),
-            stringsAsFactors = FALSE
-          )
-        })
+      category_medians <- vapply(
+        category_groups,
+        median,
+        numeric(1),
+        na.rm = TRUE
       )
 
-      category_stats <- category_stats[
-        order(category_stats$Median, decreasing = TRUE),
-        ,
-        drop = FALSE
-      ]
-
-      highest <- category_stats[1, , drop = FALSE]
-      lowest <- category_stats[nrow(category_stats), , drop = FALSE]
-
-      category_text <- paste(
-        paste0(
-          category_stats$Category,
-          " (n=", category_stats$n,
-          ", median=", round(category_stats$Median, 2),
-          ", IQR=", round(category_stats$IQR, 2), ")"
-        ),
-        collapse = "; "
-      )
-
-      comparison_text <- if (nrow(category_stats) > 1) {
-        paste0(
-          "The highest category median is for ",
-          highest$Category,
-          " (", round(highest$Median, 2),
-          "), while the lowest is for ",
-          lowest$Category,
-          " (", round(lowest$Median, 2), ")."
-        )
-      } else {
-        "There is only one POSt category in the selected data."
-      }
+      highest_category <- names(category_medians)[which.max(category_medians)]
+      lowest_category <- names(category_medians)[which.min(category_medians)]
+      highest_median <- max(category_medians)
+      lowest_median <- min(category_medians)
 
       paste0(
-        factor_name, " is based on ", length(overall),
-        " student responses. Across all selected responses, ",
-        "the mean rating is ", round(overall_mean, 2),
-        " and the median is ", round(overall_median, 2),
-        " out of 10. The middle 50% of ratings fall between ",
-        round(overall_q1, 2), " and ", round(overall_q3, 2),
-        ", giving an overall interquartile range of ",
-        round(overall_q3 - overall_q1, 2), ". ",
-        comparison_text, " ",
-        "By POSt category, the sample sizes, medians and IQRs are: ",
-        category_text, ". ",
-        "In each boxplot, the line inside the box represents the median. ",
-        "The box covers the middle 50% of observations, from the first ",
-        "quartile to the third quartile. A larger box indicates greater ",
-        "variation among the middle half of student ratings. The whiskers ",
-        "show the range of non-outlying observations, and individual points ",
-        "beyond the whiskers are potential outliers. A higher median means ",
-        "that the typical rating in that category is higher. Categories with ",
-        "small sample sizes should be interpreted cautiously."
+        unique(plot_data$Factor), " received an overall mean rating of ",
+        round(overall_mean, 2), " and a median rating of ",
+        round(overall_median, 2), " out of 10 across ",
+        length(overall), " responses. ",
+        highest_category, " had the highest median rating (",
+        round(highest_median, 2), "), while ",
+        lowest_category, " had the lowest (",
+        round(lowest_median, 2), ")."
       )
     })
 

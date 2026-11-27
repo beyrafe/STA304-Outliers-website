@@ -493,11 +493,13 @@ about_page <- function(survey) {
     shiny::tags$h2("How programs are grouped"),
     shiny::tags$p(
       "The form offered twelve program categories. Most of them had only a",
-      "handful of responses, so the graphs use four groups: Statistics,",
-      "Computer Science, Mathematics, and Other. Joint categories are placed",
-      "by the program listed first, so Mathematics & Statistics counts as",
-      "Mathematics and Computer Science & Statistics counts as Computer",
-      "Science."
+      "handful of responses, so the graphs and the POSt filter use four",
+      "groups: Statistics, Computer Science, Mathematics, and Other. Joint",
+      "categories are placed by the program listed first, so Mathematics &",
+      "Statistics counts as Mathematics and Computer Science & Statistics",
+      "counts as Computer Science. Figure 4 is the exception: it shows",
+      "Economics as its own group, which the other graphs and the filter",
+      "count under Other."
     ),
 
     shiny::tags$h2("Things to keep in mind"),
