@@ -525,15 +525,6 @@ about_page <- function(survey) {
         },
         "With so few people, one or two answers can change a graph",
         "noticeably, especially after filtering."
-      ),
-      shiny::tags$li(
-        shiny::tags$strong("Ratings are personal judgements. "),
-        "Two students can mean different things by the same number on a",
-        "1 to 10 scale."
-      ),
-      shiny::tags$li(
-        shiny::tags$strong("The survey shows patterns, not causes. "),
-        "A difference between groups does not tell us why the groups differ."
       )
     ),
 
