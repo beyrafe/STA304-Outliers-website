@@ -222,6 +222,20 @@ careerServer <- function(id, filtered_data) {
         )
     })
 
+    # Compute ANOVA for the selected rating and demographic filters.
+    anova_result <- reactive({
+      plot_data <- selected_data()
+
+      if (length(unique(plot_data$post_group)) < 2 ||
+          any(table(plot_data$post_group) < 2)) {
+        return(NULL)
+      }
+
+      model <- aov(Rating ~ post_group, data = plot_data)
+
+      summary(model)[[1]]
+    })
+
     # Concise interpretation of the selected rating and POSt comparison.
     output$interpretation <- renderText({
 
@@ -253,6 +267,42 @@ careerServer <- function(id, filtered_data) {
       highest_median <- max(category_medians)
       lowest_median <- min(category_medians)
 
+      # Extract ANOVA test statistics.
+      result <- anova_result()
+
+      if (is.null(result)) {
+        significance_text <- "Insufficient data to perform ANOVA."
+      } else {
+        f_value <- result[["F value"]][1]
+        p_value <- result[["Pr(>F)"]][1]
+        df_between <- result[["Df"]][1]
+        df_residual <- result[["Df"]][2]
+
+        if (!is.finite(f_value) || !is.finite(p_value)) {
+          significance_text <- "ANOVA results are unavailable for these responses."
+        } else {
+          significance_text <- paste0(
+            "The one-way ANOVA produced F(",
+            df_between, ", ", df_residual, ") = ",
+            round(f_value, 3), ", p = ",
+            format.pval(p_value, digits = 4), ". ",
+            if (p_value < 0.05) {
+              paste(
+                "The result is statistically significant at the 0.05 level.",
+                "We reject the null hypothesis, suggesting that",
+                "at least one POSt category has a different",
+                "population mean influence rating."
+              )
+            } else {
+              paste(
+                "The result is not statistically significant at the 0.05 level.",
+                "We fail to reject the null hypothesis."
+              )
+            }
+          )
+        }
+      }
+
       paste0(
         unique(plot_data$Factor), " received an overall mean rating of ",
         round(overall_mean, 2), " and a median rating of ",
@@ -261,7 +311,8 @@ careerServer <- function(id, filtered_data) {
         highest_category, " had the highest median rating (",
         round(highest_median, 2), "), while ",
         lowest_category, " had the lowest (",
-        round(lowest_median, 2), ")."
+        round(lowest_median, 2), "). ",
+        significance_text
       )
     })
 

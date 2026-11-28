@@ -19,6 +19,11 @@ admissionUI <- function(id) {
     ),
     
     shiny::plotOutput(ns("plot"), height = "480px"),
+    shiny::tags$hr(),
+    shiny::tags$h4("Summary statistics"),
+    shiny::tableOutput(ns("summary_table")),
+    shiny::tags$hr(),
+    shiny::tags$h4("Interpretation"),
     shiny::textOutput(ns("interpretation"))
   )
 }
@@ -130,6 +135,50 @@ admissionServer <- function(id, filtered_data) {
         )
     })
     
+    # Welch's two-sided t-test using the currently filtered data.
+    test_result <- shiny::reactive({
+      df <- plot_data()
+      no <- df$post_req_influence[df$admitted_first_choice == "No"]
+      yes <- df$post_req_influence[df$admitted_first_choice == "Yes"]
+
+      if (length(no) < 2 || length(yes) < 2) {
+        return(NULL)
+      }
+
+      result <- tryCatch(
+        stats::t.test(no, yes, alternative = "two.sided", var.equal = FALSE),
+        error = function(e) NULL
+      )
+
+      if (is.null(result) ||
+          !all(is.finite(c(result$statistic, result$parameter,
+                           result$p.value, result$conf.int)))) {
+        return(NULL)
+      }
+
+      result
+    })
+
+    # Same eight-column descriptive table as the other influence pages.
+    output$summary_table <- shiny::renderTable({
+      df <- plot_data()
+      groups <- split(df$post_req_influence, df$admitted_first_choice, drop = TRUE)
+
+      do.call(rbind, lapply(names(groups), function(group) {
+        x <- groups[[group]]
+        data.frame(
+          `First-Choice Admission` = group,
+          `Number of responses` = length(x),
+          Mean = round(mean(x), 2),
+          Median = round(median(x), 2),
+          `Standard deviation` = round(stats::sd(x), 2),
+          `First quartile` = round(as.numeric(stats::quantile(x, 0.25, names = FALSE)), 2),
+          `Third quartile` = round(as.numeric(stats::quantile(x, 0.75, names = FALSE)), 2),
+          IQR = round(stats::IQR(x), 2),
+          check.names = FALSE
+        )
+      }))
+    }, striped = TRUE, bordered = TRUE, spacing = "s", na = "—")
     
     output$interpretation <- shiny::renderText({
       
@@ -160,6 +209,42 @@ admissionServer <- function(id, filtered_data) {
       } else {
         "Both groups reported the same average influence rating."
       }
+
+      result <- test_result()
+      if (is.null(result)) {
+        significance_text <- paste(
+          "A valid Welch's t-test could not be calculated for these responses."
+        )
+      } else {
+        p_value <- result$p.value
+        test_text <- paste0(
+          "Welch's two-sample t-test produced t(",
+          round(unname(result$parameter), 2), ") = ",
+          round(unname(result$statistic), 3), ", p = ",
+          formatC(p_value, digits = 4, format = "g"),
+          ", with a 95% confidence interval for the mean difference (No - Yes) of [",
+          round(result$conf.int[1], 2), ", ",
+          round(result$conf.int[2], 2), "]. "
+        )
+
+        conclusion <- if (p_value < 0.05) {
+          direction <- if (difference > 0) "not admitted" else "admitted"
+          paste0(
+            "The result is statistically significant at the 0.05 level. ",
+            "We reject the null hypothesis of equal population means. ",
+            "The results provide evidence of a higher mean influence rating ",
+            "among students who were ", direction, " to their first-choice POSt."
+          )
+        } else {
+          paste(
+            "The result is not statistically significant at the 0.05 level.",
+            "We fail to reject the null hypothesis.",
+            "There is insufficient evidence of a difference in population mean influence ratings."
+          )
+        }
+        significance_text <- paste0(test_text, conclusion,
+          " P-values are unadjusted; filtered comparisons are exploratory.")
+      }
       
       paste0(
         "There are ", nrow(df), " valid responses. ",
@@ -171,7 +256,7 @@ admissionServer <- function(id, filtered_data) {
         "/10; Median = ", median(yes), "/10. ",
         "Mean difference (No - Yes): ",
         round(difference, 2), " points. ",
-        comparison
+        comparison, " ", significance_text
       )
     })
     
